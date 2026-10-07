@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dinga Javu | Junior AI Engineer</title>
+<meta name="description" content="Portfolio of Dinga Javu, a biomedical engineer building machine learning for healthcare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Colour tokens */
+  :root {
+    --bg: #f3f6f7;
+    --ink: #14232b;
+    --muted: #54666f;
+    --line: #d3dce0;
+    --accent: #0b6f79;
+    --accent-ink: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1a1f;
+      --ink: #e6eef1;
+      --muted: #9db0b8;
+      --line: #26363d;
+      --accent: #4fc3cf;
+      --accent-ink: #0f1a1f;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 52rem; margin: 0 auto; padding: 0 1.25rem; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  h1, h2, h3 { line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+  h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem; }
+  h3 { font-size: 1.25rem; font-weight: 700; }
+  p { margin: 0 0 1rem; max-width: 65ch; }
+
+  /* Top bar  */
+  .topbar { display: flex; justify-content: space-between; align-items: baseline; padding: 1.25rem 0; gap: 1rem; flex-wrap: wrap; }
+  .topbar strong { font-weight: 700; }
+  .topbar nav { display: flex; gap: 1.5rem; }
+  .topbar nav a { color: var(--muted); text-decoration: none; }
+  .topbar nav a:hover { color: var(--ink); text-decoration: underline; }
+
+  /* Hero  */
+  .hero { padding: 3.5rem 0 2.5rem; }
+  .hero h1 { font-size: clamp(2.75rem, 9vw, 4.75rem); font-weight: 800; letter-spacing: -0.03em; }
+  .role { font-size: 1.25rem; font-weight: 500; color: var(--accent); margin: 0.75rem 0 1.25rem; }
+  .lede { font-size: 1.25rem; max-width: 34ch; }
+  .trace { display: block; width: 100%; height: auto; margin: 2rem 0 1.75rem; overflow: visible; }
+  .trace path {
+    fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 1; stroke-dashoffset: 0;
+    animation: draw 2.6s ease-out 0.2s both;
+  }
+  @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .trace path { animation: none; } html { scroll-behavior: auto; } }
+
+  .links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; }
+  .btn { display: inline-block; background: var(--accent); color: var(--accent-ink); padding: 0.6rem 1.25rem; border-radius: 4px; font-weight: 700; text-decoration: none; }
+  .btn:hover { filter: brightness(1.1); }
+
+  /* Sections */
+  section { padding: 2.75rem 0; border-top: 1px solid var(--line); }
+
+  /* Featured projects: one entry per project, separated by rules */
+  .project { padding: 1.75rem 0; border-top: 1px solid var(--line); }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project h3 { margin-bottom: 0.6rem; }
+  .status { font-size: 0.9rem; color: var(--muted); font-weight: 500; margin-left: 0.5rem; }
+  .result { border-left: 3px solid var(--accent); padding-left: 0.9rem; margin: 1rem 0; }
+  .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0 0 1rem; }
+  .tags li { font-size: 0.875rem; border: 1px solid var(--line); border-radius: 3px; padding: 0.1rem 0.55rem; color: var(--muted); }
+  .project .links { gap: 0.5rem 1.25rem; }
+
+  /* Simple lists */
+  .plain { list-style: none; padding: 0; margin: 0; }
+  .plain li { padding: 0.6rem 0; border-top: 1px solid var(--line); }
+  .plain li:first-child { border-top: 0; padding-top: 0; }
+  dl { margin: 0; display: grid; grid-template-columns: 1fr; gap: 0.35rem 1.5rem; }
+  dt { font-weight: 700; }
+  dd { margin: 0 0 0.75rem; color: var(--muted); }
+  @media (min-width: 40rem) {
+    dl { grid-template-columns: 9rem 1fr; }
+    dd { margin: 0; }
+  }
+
+  footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+  footer p { margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="topbar">
+    <strong>Dinga Javu</strong>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO-->
+  <main>
+  <div class="hero">
+    <h1>Dinga Javu</h1>
+    <p class="role">Junior AI Engineer (Independent)</p>
+    <p class="lede">I build AI solutions that drive smarter, data-driven decisions.</p>
+
+    <!-- ECG trace: the one animated element on the page -->
+    <svg class="trace" viewBox="0 0 830 70" aria-hidden="true" focusable="false">
+      <path pathLength="1" d="M0 44
+        h50 q7 -9 14 0 h14 l5 7 l7 -34 l7 41 l5 -14 h16 q9 -11 18 0 h64
+        h50 q7 -9 14 0 h14 l5 7 l7 -34 l7 41 l5 -14 h16 q9 -11 18 0 h64
+        h50 q7 -9 14 0 h14 l5 7 l7 -34 l7 41 l5 -14 h16 q9 -11 18 0 h64
+        h50 q7 -9 14 0 h14 l5 7 l7 -34 l7 41 l5 -14 h16 q9 -11 18 0 h64"/>
+    </svg>
+
+    <div class="links">
+      <a class="btn" href="cv.pdf">Download CV</a>  
+      <a href="https://github.com/dingajavu">GitHub</a>
+      <a href="https://www.linkedin.com/in/dingajavu">LinkedIn</a>
+      <a href="mailto:dingajavu@gmail.com">Email</a>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <section id="about">
+    <h2>About</h2>
+    <p>I'm a biomedical engineering graduate looking to apply the skills I've gained and developed, particularly in building AI/ML solutions. The 'why?' is the foundation of the best solutions. Combining that with my analytical-mindset and problem-solving skills, I have built systems that are measured not by their pure metrics but their performance in the context of their purpose.</p>
+    <p>I am looking for an entry-level AI Engineering position to leverage my skills in building grounded, reliable AI systems that solve complex challenges and enhance client outcomes.</p>
+    <p>The projects below are self-directed. Where I can host a demo, there's a link.</p>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <!-- IDC Convolutional Neural Network Classifier -->
+    <article class="project">
+      <h3>Invasive Ductal Carcinoma (IDC) CNN Classifier </h3>
+      <p>A custom lightweight CNN trained on 277524 histopathological patches from 279 patients' whole-mount slides to detect invasive ductal carcinoma (IDC) in breast tissue. The custom-designed architecture is geared to low-resolution 50×50 patches. Evaluation keeps the clinical context in view, with threshold analysis and probability calibration.</p>
+      <p class="result"><strong>Result:</strong> Test AUC-ROC = 0.9518 and AUC-PR = 0.8322 on a patient-level split. At a threshold (0.3294) chosen to prioritise sensitivity, recall is 0.96 at the cost of precision being 0.51.</p>
+      <ul class="tags"><li>Keras</li><li>TensorFlow</li><li>Python</li><li>Computer vision</li></ul>
+      <div class="links">
+        <a href="https://github.com/dingajavu/IDC-CNN-Classifier/">GitHub</a>
+      </div>
+    </article>
+
+        <!-- Grad-CAM with Explainable AI -->
+    <article class="project">
+      <h3>IDC Grad-CAM Explainer</h3>
+      <p>A research demo that extends the IDC CNN classifier with an explanation layer. The trained CNN classifies a histopathology patch and Grad-CAM overlays a heatmap showing which regions drove the prediction. Gemini then explains the result in plain language and answers follow-up questions in a conversational interface. The explanations are limited to what the model can actually see. The Grad-CAM works on a 6×6 grid over a 50×50 patch, so the assistant describes tissue-level patterns and declines to make cellular or diagnostic claims.</p>
+      <p class="result"><strong>Result:</strong> Stress-tested with questions it shouldn't answer (cellular detail, diagnosis, training-data claims).</p>
+      <ul class="tags"><li>TensorFlow</li><li>Grad-CAM</li><li>LangChain</li><li>Gemini API</li><li>Keras</li><li>Streamlit</li><li>Healthcare AI</li></ul>
+      <div class="links">
+        <a href="https://idc-gradcam-explainer.streamlit.app/">Live demo</a>
+        <a href="https://github.com/dingajavu/IDC-GradCAM-Explainer">GitHub</a>
+      </div>
+    </article>
+
+    <!-- QnA Assistant -->
+    <article class="project">
+      <h3>RAG clinical Q&amp;A assistant</h3>
+      <p>Built a RAG pipeline from scratch without a high-level framework (like LangChain), implementing custom text chunking, page-aware metadata tracking, and an adaptive rate-limiter for resilient large-scale document ingestion. Ingestion is also resumable, so after an interruption or an API rate limit it picks up where it left off instead of starting over.</p>
+      <p class="result"><strong>Result:</strong> Each answer is generated from passages retrieved from the source literature, so responses can be traced back to the documents rather than relying on the model's general knowledge.</p>
+      <ul class="tags"><li>Retrieval-Augmented Generation (RAG)</li><li>ChromaDB</li><li>Streamlit</li><li>Gemini API</li><li>Vector embeddings</li><li>Healthcare AI</li><li>Semantic search</li></ul>
+      <div class="links">
+        <a href="https://github.com/dingajavu/Clinical-QnA-Assistant">GitHub</a>
+      </div>
+    </article>
+
+    <!-- More work -->
+    <h3 style="margin: 2rem 0 1rem;">More work</h3>
+    <ul class="plain">
+      <li><strong>AWS Glue recommendation pipeline.</strong> An ETL pipeline for a movie recommendation system, moving data from MySQL to Parquet on S3, with the IAM permissions and VPC endpoints set up to make it run. The AWS resources were deleted after completion to avoid billing costs.</li>
+      <li><strong>ML models suite.</strong> A set of regression and classification models.</li>
+    </ul>
+  </section>
+
+  <!-- SKILLS & BACKGROUND  -->
+  <section id="background">
+    <h2>Skills</h2>
+    <dl>
+      <dt>Machine learning</dt><dd>TensorFlow/Keras, model evaluation, explainability (Grad-CAM)</dd>
+      <dt>Generative AI</dt><dd>RAG, LangChain, Gemini API, prompt design</dd>
+      <dt>Data and cloud</dt><dd>Python, AWS Glue, S3, SQL</dd>
+      <dt>Tools</dt><dd>Git, GitHub, Streamlit, Jupyter, Conda, WSL2</dd>
+    </dl>
+
+    <h2 style="margin-top: 2.5rem;">Education and experience</h2>
+    <dl>
+      <dt>2025</dt><dd><strong>BEngSc Biomedical Engineering</strong>, University of the Witwatersrand</dd>
+      <dt>SEP 2024 - DEC 2025</dt><dd><strong>Trainee Engineer</strong>, Storky Consulting and Projects</dd>
+      <dt>2026</dt><dd>Machine Learning A-Z, Udemy</dd>
+    </dl>
+  </section>
+
+  </main>
+</div>
+
+<!-- CONTACT  -->
+<footer id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Hiring, or want to talk about a project? Email me at <a href="mailto:dingajavu@gmail.com">dingajavu@gmail.com</a>, or find me on <a href="https://www.linkedin.com/in/dingajavu">LinkedIn</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
