@@ -86,6 +86,7 @@
   .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0 0 1rem; }
   .tags li { font-size: 0.875rem; border: 1px solid var(--line); border-radius: 3px; padding: 0.1rem 0.55rem; color: var(--muted); }
   .project .links { gap: 0.5rem 1.25rem; }
+  .demo-note { font-size: 0.9rem; color: var(--muted); margin: 0.4rem 0 0; }
 
   /* Simple lists */
   .plain { list-style: none; padding: 0; margin: 0; }
@@ -174,6 +175,7 @@
         <a href="https://idc-gradcam-explainer.streamlit.app/">Live demo</a>
         <a href="https://github.com/dingajavu/IDC-GradCAM-Explainer">GitHub</a>
       </div>
+      <p class="demo-note">The demo may take a minute to wake up.</p>
     </article>
 
     <!-- QnA Assistant -->
@@ -185,6 +187,19 @@
       <div class="links">
         <a href="https://github.com/dingajavu/Clinical-QnA-Assistant">GitHub</a>
       </div>
+    </article>
+
+    <!-- Digital Twin -->
+    <article class="project">
+      <h3>AI Digital Twin</h3>
+      <p>An AI twin of me that answers recruiters' and hiring managers' questions about my career from my CV and project documents. Built without an agent framework, so the retrieval and tool-calling loop is visible and testable. Questions it can't answer are sent to me for review, and the answers I approve go into a knowledge base it uses from then on. All deployment choices live in one config file, so the same code can run a business assistant with no code changes.</p>
+      <p class="result"><strong>Result:</strong> Passes all 23 evaluation cases, which combine automatic checks with an LLM judge and cover factual accuracy, prompt extraction, private data leaks and made-up answers. Quality is compared against a saved baseline to catch regressions.</p>
+      <ul class="tags"><li>Python</li><li>OpenAI API</li><li>Tool calling</li><li>Gradio</li><li>SQLite</li><li>Turso</li><li>LLM evaluation</li></ul>
+      <div class="links">
+        <a href="https://digital-twin-8faq.onrender.com">Live demo</a>
+        <a href="https://github.com/dingajavu/Digital-Twin">GitHub</a>
+      </div>
+      <p class="demo-note">The demo may take a minute to wake up.</p>
     </article>
 
     <!-- More work -->
@@ -200,8 +215,8 @@
     <h2>Skills</h2>
     <dl>
       <dt>Machine learning</dt><dd>TensorFlow/Keras, model evaluation, explainability (Grad-CAM)</dd>
-      <dt>Generative AI</dt><dd>RAG, LangChain, Gemini API, prompt design</dd>
-      <dt>Data and cloud</dt><dd>Python, AWS Glue, S3, SQL</dd>
+      <dt>Generative AI</dt><dd>RAG, LangChain, Gemini API, OpenAI API, tool calling, prompt design, LLM evaluation</dd>
+      <dt>Data and cloud</dt><dd>Python, AWS Glue, S3, SQL, SQLite</dd>
       <dt>Tools</dt><dd>Git, GitHub, Streamlit, Jupyter, Conda, WSL2</dd>
     </dl>
 
